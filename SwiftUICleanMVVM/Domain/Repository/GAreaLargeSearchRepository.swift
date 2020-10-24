@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum BookDetailRepositoryProvider {
     
@@ -15,18 +16,19 @@ enum BookDetailRepositoryProvider {
 }
 
 protocol GAreaLargeSearchRepository {
-    func get(completion: @escaping (GAreaLargeSearchResult) -> Void)
+    func get() -> Future<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>>
 }
 
 private final class GAreaLargeSearchRepositoryImpl: GAreaLargeSearchRepository {
     
     private let api: GAreaLargeSearchAPIGateway
+    private var cancellables: [AnyCancellable] = []
     
     init(api: GAreaLargeSearchAPIGateway) {
         self.api = api
     }
     
-    func get(completion: @escaping (GAreaLargeSearchResult) -> Void) {
-        api.get(completion: completion)
+    func get() -> Future<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>> {
+        return self.api.get()
     }
 }

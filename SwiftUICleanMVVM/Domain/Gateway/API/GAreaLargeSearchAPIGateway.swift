@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum GAreaLargeSearchAPIGatewayProvider {
 
@@ -15,27 +16,33 @@ enum GAreaLargeSearchAPIGatewayProvider {
 }
 
 protocol GAreaLargeSearchAPIGateway {
-    func get(completion: @escaping (GAreaLargeSearchResult) -> Void)
+    func get() -> Future<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>>
 }
 
 private final class GAreaLargeSearchAPIGatewayImpl: GAreaLargeSearchAPIGateway {
 
     var apiClient: APIClient
+    private var cancellables: [AnyCancellable] = []
     
     init(apiClient: APIClient) {
         self.apiClient = apiClient
     }
     
-    func get(completion: @escaping (GAreaLargeSearchResult) -> Void) {
-        let request = GAreaLargeSearchRequest()
-        NetworkConnection.isReachable { [weak self] result in
-            switch result {
-            case .success:
-                self?.apiClient.request(request: request, completion: completion)
-                
-            case .failure(let reachabilityError):
-                completion(.failure(.reachabilityError(reachabilityError)))
-            }
+    func get() -> Future<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>> {
+        return Future<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>> { [weak self] promise in
+            guard let self = self else { return }
+            let request = GAreaLargeSearchRequest()
+            self.apiClient.request(request).sink { completion in
+                switch completion {
+                case .finished:
+                    print("GAreaLargeSearchAPIGateway get finished")
+                case .failure(let apiError):
+                    print("GAreaLargeSearchAPIGateway get failure")
+                    promise(.failure(apiError))
+                }
+            } receiveValue: { response in
+                promise(.success(response))
+            }.store(in: &self.cancellables)
         }
     }
 }

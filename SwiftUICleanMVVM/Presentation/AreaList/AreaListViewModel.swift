@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 struct AreaViewData: Identifiable {
     var id = ""
@@ -19,24 +20,41 @@ struct AreaViewData: Identifiable {
 
 final class AreaListViewModel: ObservableObject {
 
+    private var cancellables: [AnyCancellable] = []
+    
     @Published
-    var areas: [AreaViewData] = []
+    var viewData: [AreaViewData] = []
 
+    @Published
+    var errorMessage: String?
+    
     var useCase: AreaListUseCase!
-
+    
     init(useCase: AreaListUseCase) {
         self.useCase = useCase
     }
-
+    
     private(set) lazy var onAppear: () -> Void = { [weak self] in
         guard let self = self else { return }
-        self.useCase.getAreaList(completion: { (result) in
-            switch result {
-            case .success(let response):
-                self.areas = response.gareaLarge.map { AreaViewData(gAreaLarge: $0) }
-            case .failure(let error):
-                self.areas = []
+        self.useCase.getAreaList()
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let apiError):
+                    print("APIError: \(apiError.errorDescription ?? "")")
+                    self?.errorMessage = apiError.errorDescription
+                }
+                
+            } receiveValue: { [weak self] response in
+                self?.viewData = response.gareaLarge.map { AreaViewData(gAreaLarge: $0) }
             }
-        })
+            .store(in: &self.cancellables)
+    }
+    
+    private(set) lazy var onDisappear: () -> Void = { [weak self] in
+        guard let self = self else { return }
+        self.cancellables.forEach { $0.cancel() }
+        self.cancellables = []
     }
 }

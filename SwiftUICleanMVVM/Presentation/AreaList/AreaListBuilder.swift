@@ -5,8 +5,6 @@
 //  Created by okudera on 2020/10/24.
 //
 
-import SwiftUI
-
 enum AreaListBuilder {
 
     static func build() -> AreaListView {

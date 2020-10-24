@@ -6,8 +6,7 @@
 //
 
 import Foundation
-
-typealias GAreaLargeSearchResult = Result<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>>
+import Combine
 
 enum AreaListUseCaseProvider {
 
@@ -19,7 +18,7 @@ enum AreaListUseCaseProvider {
 }
 
 protocol AreaListUseCase {
-    func getAreaList(completion: @escaping (GAreaLargeSearchResult) -> Void)
+    func getAreaList() -> Future<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>>
 }
 
 final class AreaListUseCaseImpl: AreaListUseCase {
@@ -30,7 +29,7 @@ final class AreaListUseCaseImpl: AreaListUseCase {
         self.gAreaLargeSearchRepository = gAreaLargeSearchRepository
     }
 
-    func getAreaList(completion: @escaping (GAreaLargeSearchResult) -> Void) {
-        self.gAreaLargeSearchRepository.get(completion: completion)
+    func getAreaList() -> Future<GAreaLargeSearchRequest.Response, APIError<GAreaLargeSearchRequest>> {
+        self.gAreaLargeSearchRepository.get()
     }
 }

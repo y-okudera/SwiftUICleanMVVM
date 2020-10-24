@@ -14,11 +14,16 @@ struct AreaListView: View {
 
     var body: some View {
         NavigationView {
-            List($viewModel.areas.wrappedValue) { area in
-                Text(area.name)
-            }
-            .onAppear(perform: viewModel.onAppear)
-            .navigationBarTitle("エリア一覧")
+            List($viewModel.viewData.wrappedValue) { area in Text(area.name) }
+                .onAppear(perform: viewModel.onAppear)
+                .onDisappear(perform: viewModel.onDisappear)
+                .navigationBarTitle("エリア一覧")
+                .alert(
+                    isPresented: Binding<Bool>(get: { viewModel.errorMessage != nil }, set: { _ in } ),
+                    content: {
+                        Alert(title: Text("エラー"), message: Text(viewModel.errorMessage ?? ""))
+                    }
+                )
         }
     }
 }

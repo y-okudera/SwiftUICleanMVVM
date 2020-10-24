@@ -12,15 +12,10 @@
 		FC8D5A6C25442FAC0095E61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8D5A4525442FAC0095E61C /* Assets.xcassets */; };
 		FC8D5A6D25442FAC0095E61C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8D5A4725442FAC0095E61C /* Preview Assets.xcassets */; };
 		FC8D5A6E25442FAC0095E61C /* GAreaLargeSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A4A25442FAC0095E61C /* GAreaLargeSearchRepository.swift */; };
-		FC8D5A6F25442FAC0095E61C /* NetworkReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A4D25442FAC0095E61C /* NetworkReachabilityError.swift */; };
-		FC8D5A7025442FAC0095E61C /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A4E25442FAC0095E61C /* NetworkConnection.swift */; };
-		FC8D5A7125442FAC0095E61C /* APICanceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5025442FAC0095E61C /* APICanceller.swift */; };
 		FC8D5A7225442FAC0095E61C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5125442FAC0095E61C /* APIError.swift */; };
 		FC8D5A7325442FAC0095E61C /* APIRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5225442FAC0095E61C /* APIRequestable.swift */; };
 		FC8D5A7425442FAC0095E61C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5325442FAC0095E61C /* APIClient.swift */; };
 		FC8D5A7525442FAC0095E61C /* EncodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5425442FAC0095E61C /* EncodingType.swift */; };
-		FC8D5A7625442FAC0095E61C /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5525442FAC0095E61C /* HTTPStatusCode.swift */; };
-		FC8D5A7725442FAC0095E61C /* GuruNaviError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5A25442FAC0095E61C /* GuruNaviError.swift */; };
 		FC8D5A7825442FAC0095E61C /* GAreaLargeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5B25442FAC0095E61C /* GAreaLargeSearchResponse.swift */; };
 		FC8D5A7925442FAC0095E61C /* GuruNaviParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A5F25442FAC0095E61C /* GuruNaviParamsBuilder.swift */; };
 		FC8D5A7A25442FAC0095E61C /* GAreaLargeSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A6025442FAC0095E61C /* GAreaLargeSearchRequest.swift */; };
@@ -58,15 +53,10 @@
 		FC8D5A4525442FAC0095E61C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC8D5A4725442FAC0095E61C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC8D5A4A25442FAC0095E61C /* GAreaLargeSearchRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAreaLargeSearchRepository.swift; sourceTree = "<group>"; };
-		FC8D5A4D25442FAC0095E61C /* NetworkReachabilityError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityError.swift; sourceTree = "<group>"; };
-		FC8D5A4E25442FAC0095E61C /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		FC8D5A5025442FAC0095E61C /* APICanceller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICanceller.swift; sourceTree = "<group>"; };
 		FC8D5A5125442FAC0095E61C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		FC8D5A5225442FAC0095E61C /* APIRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestable.swift; sourceTree = "<group>"; };
 		FC8D5A5325442FAC0095E61C /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FC8D5A5425442FAC0095E61C /* EncodingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodingType.swift; sourceTree = "<group>"; };
-		FC8D5A5525442FAC0095E61C /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
-		FC8D5A5A25442FAC0095E61C /* GuruNaviError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuruNaviError.swift; sourceTree = "<group>"; };
 		FC8D5A5B25442FAC0095E61C /* GAreaLargeSearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAreaLargeSearchResponse.swift; sourceTree = "<group>"; };
 		FC8D5A5F25442FAC0095E61C /* GuruNaviParamsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuruNaviParamsBuilder.swift; sourceTree = "<group>"; };
 		FC8D5A6025442FAC0095E61C /* GAreaLargeSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAreaLargeSearchRequest.swift; sourceTree = "<group>"; };
@@ -178,30 +168,18 @@
 		FC8D5A4B25442FAC0095E61C /* Infra */ = {
 			isa = PBXGroup;
 			children = (
-				FC8D5A4C25442FAC0095E61C /* NetworkConnection */,
 				FC8D5A4F25442FAC0095E61C /* API */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
 		};
-		FC8D5A4C25442FAC0095E61C /* NetworkConnection */ = {
-			isa = PBXGroup;
-			children = (
-				FC8D5A4D25442FAC0095E61C /* NetworkReachabilityError.swift */,
-				FC8D5A4E25442FAC0095E61C /* NetworkConnection.swift */,
-			);
-			path = NetworkConnection;
-			sourceTree = "<group>";
-		};
 		FC8D5A4F25442FAC0095E61C /* API */ = {
 			isa = PBXGroup;
 			children = (
-				FC8D5A5025442FAC0095E61C /* APICanceller.swift */,
+				FC8D5A5325442FAC0095E61C /* APIClient.swift */,
 				FC8D5A5125442FAC0095E61C /* APIError.swift */,
 				FC8D5A5225442FAC0095E61C /* APIRequestable.swift */,
-				FC8D5A5325442FAC0095E61C /* APIClient.swift */,
 				FC8D5A5425442FAC0095E61C /* EncodingType.swift */,
-				FC8D5A5525442FAC0095E61C /* HTTPStatusCode.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -234,7 +212,6 @@
 		FC8D5A5925442FAC0095E61C /* GuruNavi */ = {
 			isa = PBXGroup;
 			children = (
-				FC8D5A5A25442FAC0095E61C /* GuruNaviError.swift */,
 				FC8D5A5B25442FAC0095E61C /* GAreaLargeSearchResponse.swift */,
 			);
 			path = GuruNavi;
@@ -472,9 +449,6 @@
 				FC8D5A7B25442FAC0095E61C /* AreaListUseCase.swift in Sources */,
 				FC8D5AD1254432B00095E61C /* AreaListBuilder.swift in Sources */,
 				FC8D5A7D25442FAC0095E61C /* AreaListViewModel.swift in Sources */,
-				FC8D5A7625442FAC0095E61C /* HTTPStatusCode.swift in Sources */,
-				FC8D5A7025442FAC0095E61C /* NetworkConnection.swift in Sources */,
-				FC8D5A7725442FAC0095E61C /* GuruNaviError.swift in Sources */,
 				FC8D5A6E25442FAC0095E61C /* GAreaLargeSearchRepository.swift in Sources */,
 				FC8D5A7A25442FAC0095E61C /* GAreaLargeSearchRequest.swift in Sources */,
 				FC8D5A6B25442FAC0095E61C /* SwiftUICleanMVVMApp.swift in Sources */,
@@ -483,8 +457,6 @@
 				FC8D5A7E25442FAC0095E61C /* AreaListView.swift in Sources */,
 				FC8D5A7525442FAC0095E61C /* EncodingType.swift in Sources */,
 				FC8D5A7425442FAC0095E61C /* APIClient.swift in Sources */,
-				FC8D5A7125442FAC0095E61C /* APICanceller.swift in Sources */,
-				FC8D5A6F25442FAC0095E61C /* NetworkReachabilityError.swift in Sources */,
 				FC8D5A7225442FAC0095E61C /* APIError.swift in Sources */,
 				FC8D5A7325442FAC0095E61C /* APIRequestable.swift in Sources */,
 			);
