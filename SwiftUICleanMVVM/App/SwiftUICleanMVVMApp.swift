@@ -1,6 +1,6 @@
 //
-//  NetworkCommunicatorApp.swift
-//  NetworkCommunicator
+//  SwiftUICleanMVVMApp.swift
+//  SwiftUICleanMVVM
 //
 //  Created by okudera on 2020/10/24.
 //
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct NetworkCommunicatorApp: App {
+struct SwiftUICleanMVVMApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AreaListBuilder.build()
         }
     }
 }
