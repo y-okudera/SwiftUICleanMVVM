@@ -1,8 +1,6 @@
 # SwiftUICleanMVVM
 SwiftUI・Combine frameworkを使用したサンプルアプリ
 
-
-
 ## Architecture
 
 Clean ArchitectureでPresentationレイヤーには、MVVMを採用
@@ -15,7 +13,13 @@ Using Swift Package Manager.
 | :-------: | :-----: | :-------------------------------------------------------: |
 | Alamofire |  5.3.0  | Alamofire is an HTTP networking library written in Swift. |
 
+## Environment
 
+
+|   Name    | Version |
+| :-------: | :-----: |
+| Xcode |  12.0.1  |
+| Deployment Target |  iOS 14.0 or later  |
 
 ## Build
 
