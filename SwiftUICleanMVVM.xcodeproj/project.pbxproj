@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FC70936D2544023D00F88071 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FC70936C2544023D00F88071 /* Alamofire */; };
+		FC88CFCB2545D8B90055529E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FC88CFCA2545D8B90055529E /* Lottie */; };
+		FC88CFD22545D9440055529E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88CFD12545D9440055529E /* LottieView.swift */; };
+		FC88CFDC2545DACE0055529E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FC88CFDB2545DACE0055529E /* loading.json */; };
+		FC88CFE42545E9C40055529E /* LottieViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88CFE32545E9C40055529E /* LottieViewType.swift */; };
+		FC88CFEA2545EA3B0055529E /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88CFE92545EA3B0055529E /* View+.swift */; };
 		FC8D5A6B25442FAC0095E61C /* SwiftUICleanMVVMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5A4425442FAC0095E61C /* SwiftUICleanMVVMApp.swift */; };
 		FC8D5A6C25442FAC0095E61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8D5A4525442FAC0095E61C /* Assets.xcassets */; };
 		FC8D5A6D25442FAC0095E61C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8D5A4725442FAC0095E61C /* Preview Assets.xcassets */; };
@@ -49,6 +54,10 @@
 		FC7093342543FF5B00F88071 /* SwiftUICleanMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICleanMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7093452543FF5C00F88071 /* SwiftUICleanMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUICleanMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7093502543FF5C00F88071 /* SwiftUICleanMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUICleanMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC88CFD12545D9440055529E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		FC88CFDB2545DACE0055529E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		FC88CFE32545E9C40055529E /* LottieViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewType.swift; sourceTree = "<group>"; };
+		FC88CFE92545EA3B0055529E /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		FC8D5A4425442FAC0095E61C /* SwiftUICleanMVVMApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUICleanMVVMApp.swift; sourceTree = "<group>"; };
 		FC8D5A4525442FAC0095E61C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC8D5A4725442FAC0095E61C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -76,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC70936D2544023D00F88071 /* Alamofire in Frameworks */,
+				FC88CFCB2545D8B90055529E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +124,39 @@
 				FC7093502543FF5C00F88071 /* SwiftUICleanMVVMUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FC88CFCF2545D9070055529E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC88CFD02545D92B0055529E /* LottieView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC88CFD02545D92B0055529E /* LottieView */ = {
+			isa = PBXGroup;
+			children = (
+				FC88CFD12545D9440055529E /* LottieView.swift */,
+				FC88CFE32545E9C40055529E /* LottieViewType.swift */,
+			);
+			path = LottieView;
+			sourceTree = "<group>";
+		};
+		FC88CFDA2545DACE0055529E /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FC88CFDB2545DACE0055529E /* loading.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		FC88CFE82545EA320055529E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FC88CFE92545EA3B0055529E /* View+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		FC8D5A4225442FAC0095E61C /* SwiftUICleanMVVM */ = {
@@ -270,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				FC8D5A6725442FAC0095E61C /* AreaList */,
+				FC88CFE82545EA320055529E /* Extension */,
+				FC88CFCF2545D9070055529E /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -304,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				FC8D5A4525442FAC0095E61C /* Assets.xcassets */,
+				FC88CFDA2545DACE0055529E /* Lottie */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -326,6 +372,7 @@
 			name = SwiftUICleanMVVM;
 			packageProductDependencies = (
 				FC70936C2544023D00F88071 /* Alamofire */,
+				FC88CFCA2545D8B90055529E /* Lottie */,
 			);
 			productName = NetworkCommunicator;
 			productReference = FC7093342543FF5B00F88071 /* SwiftUICleanMVVM.app */;
@@ -400,6 +447,7 @@
 			mainGroup = FC70932B2543FF5B00F88071;
 			packageReferences = (
 				FC70936B2544023D00F88071 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FC88CFC92545D8B90055529E /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = FC7093352543FF5B00F88071 /* Products */;
 			projectDirPath = "";
@@ -419,6 +467,7 @@
 			files = (
 				FC8D5A6D25442FAC0095E61C /* Preview Assets.xcassets in Resources */,
 				FC8D5A6C25442FAC0095E61C /* Assets.xcassets in Resources */,
+				FC88CFDC2545DACE0055529E /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,8 +496,10 @@
 			files = (
 				FC8D5A7C25442FAC0095E61C /* GAreaLargeSearchAPIGateway.swift in Sources */,
 				FC8D5A7B25442FAC0095E61C /* AreaListUseCase.swift in Sources */,
+				FC88CFD22545D9440055529E /* LottieView.swift in Sources */,
 				FC8D5AD1254432B00095E61C /* AreaListBuilder.swift in Sources */,
 				FC8D5A7D25442FAC0095E61C /* AreaListViewModel.swift in Sources */,
+				FC88CFEA2545EA3B0055529E /* View+.swift in Sources */,
 				FC8D5A6E25442FAC0095E61C /* GAreaLargeSearchRepository.swift in Sources */,
 				FC8D5A7A25442FAC0095E61C /* GAreaLargeSearchRequest.swift in Sources */,
 				FC8D5A6B25442FAC0095E61C /* SwiftUICleanMVVMApp.swift in Sources */,
@@ -457,6 +508,7 @@
 				FC8D5A7E25442FAC0095E61C /* AreaListView.swift in Sources */,
 				FC8D5A7525442FAC0095E61C /* EncodingType.swift in Sources */,
 				FC8D5A7425442FAC0095E61C /* APIClient.swift in Sources */,
+				FC88CFE42545E9C40055529E /* LottieViewType.swift in Sources */,
 				FC8D5A7225442FAC0095E61C /* APIError.swift in Sources */,
 				FC8D5A7325442FAC0095E61C /* APIRequestable.swift in Sources */,
 			);
@@ -786,6 +838,14 @@
 				minimumVersion = 5.3.0;
 			};
 		};
+		FC88CFC92545D8B90055529E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -793,6 +853,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC70936B2544023D00F88071 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FC88CFCA2545D8B90055529E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC88CFC92545D8B90055529E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

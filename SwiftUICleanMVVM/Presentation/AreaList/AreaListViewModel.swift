@@ -27,6 +27,9 @@ final class AreaListViewModel: ObservableObject {
 
     @Published
     var errorMessage: String?
+
+    @Published
+    var isLoading = false
     
     var useCase: AreaListUseCase!
     
@@ -36,6 +39,9 @@ final class AreaListViewModel: ObservableObject {
     
     private(set) lazy var onAppear: () -> Void = { [weak self] in
         guard let self = self else { return }
+
+        self.isLoading = true
+
         self.useCase.getAreaList()
             .sink { [weak self] completion in
                 switch completion {
@@ -45,6 +51,7 @@ final class AreaListViewModel: ObservableObject {
                     print("APIError: \(apiError.errorDescription ?? "")")
                     self?.errorMessage = apiError.errorDescription
                 }
+                self?.isLoading = false
                 
             } receiveValue: { [weak self] response in
                 self?.viewData = response.gareaLarge.map { AreaViewData(gAreaLarge: $0) }
