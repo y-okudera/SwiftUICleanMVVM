@@ -312,8 +312,8 @@
 		FC8D5A6625442FAC0095E61C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FC8D5A6725442FAC0095E61C /* AreaList */,
 				FC88CFE82545EA320055529E /* Extension */,
+				FCD8E9CF2545EE600055ED6D /* Scene */,
 				FC88CFCF2545D9070055529E /* View */,
 			);
 			path = Presentation;
@@ -352,6 +352,14 @@
 				FC88CFDA2545DACE0055529E /* Lottie */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FCD8E9CF2545EE600055ED6D /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				FC8D5A6725442FAC0095E61C /* AreaList */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
