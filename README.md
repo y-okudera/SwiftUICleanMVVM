@@ -12,6 +12,7 @@ Using Swift Package Manager.
 |   Name    | Version |                        Description                        |
 | :-------: | :-----: | :-------------------------------------------------------: |
 | Alamofire |  5.3.0  | Alamofire is an HTTP networking library written in Swift. |
+| Lottie |  3.1.8  | Lottie is natively renders vector based animations and art in realtime with minimal code. |
 
 ## Environment
 
