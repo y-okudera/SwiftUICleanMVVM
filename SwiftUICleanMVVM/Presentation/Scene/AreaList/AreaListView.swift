@@ -20,7 +20,7 @@ struct AreaListView<ViewModel: AreaListViewModelProtocol>: View {
                     .onDisappear(perform: viewModel.onDisappear)
                     .navigationBarTitle("エリア一覧")
                     .alert(
-                        isPresented: Binding<Bool>(get: { viewModel.errorMessage != nil }, set: { _ in } ),
+                        isPresented: Binding<Bool>(get: { viewModel.errorMessage != nil }, set: { _ in viewModel.errorMessage = nil } ),
                         content: {
                             Alert(title: Text("エラー"), message: Text(viewModel.errorMessage ?? ""))
                         }

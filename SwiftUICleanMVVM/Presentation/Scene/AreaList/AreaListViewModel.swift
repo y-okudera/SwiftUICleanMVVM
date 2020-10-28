@@ -10,7 +10,7 @@ import Combine
 
 protocol AreaListViewModelProtocol: ObservableObject {
     var viewData: [AreaViewData] { get set }
-    var errorMessage: String? { get }
+    var errorMessage: String? { get set }
     var isLoading: Bool { get set }
 
     var onAppear: () -> Void { get }
