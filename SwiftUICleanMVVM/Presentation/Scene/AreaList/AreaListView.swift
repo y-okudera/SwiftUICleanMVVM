@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct AreaListView: View {
+struct AreaListView<ViewModel: AreaListViewModelProtocol>: View {
 
     @ObservedObject
-    var viewModel: AreaListViewModel
+    var viewModel: ViewModel
 
     var body: some View {
         NavigationView {

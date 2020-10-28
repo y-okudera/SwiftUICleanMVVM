@@ -7,8 +7,9 @@
 
 enum AreaListBuilder {
 
-    static func build() -> AreaListView {
-        let viewModel = AreaListViewModel(useCase: AreaListUseCaseProvider.provide())
+    static func build() -> AreaListView<AreaListViewModel> {
+        let useCase = AreaListUseCaseProvider.provide()
+        let viewModel = AreaListViewModel(useCase: useCase)
         let view = AreaListView(viewModel: viewModel)
         return view
     }

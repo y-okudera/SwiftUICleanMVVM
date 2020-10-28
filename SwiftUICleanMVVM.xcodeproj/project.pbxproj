@@ -31,6 +31,7 @@
 		FC8D5A8725442FBA0095E61C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC8D5A8525442FBA0095E61C /* Info.plist */; };
 		FC8D5A9225442FCF0095E61C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC8D5A9025442FCF0095E61C /* Info.plist */; };
 		FC8D5AD1254432B00095E61C /* AreaListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8D5AD0254432B00095E61C /* AreaListBuilder.swift */; };
+		FCF960AE2549CCA300F3EAB0 /* AreaViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF960AD2549CCA300F3EAB0 /* AreaViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		FC8D5A8525442FBA0095E61C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC8D5A9025442FCF0095E61C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC8D5AD0254432B00095E61C /* AreaListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaListBuilder.swift; sourceTree = "<group>"; };
+		FCF960AD2549CCA300F3EAB0 /* AreaViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,9 +324,10 @@
 		FC8D5A6725442FAC0095E61C /* AreaList */ = {
 			isa = PBXGroup;
 			children = (
-				FC8D5A6825442FAC0095E61C /* AreaListViewModel.swift */,
-				FC8D5A6925442FAC0095E61C /* AreaListView.swift */,
 				FC8D5AD0254432B00095E61C /* AreaListBuilder.swift */,
+				FC8D5A6925442FAC0095E61C /* AreaListView.swift */,
+				FC8D5A6825442FAC0095E61C /* AreaListViewModel.swift */,
+				FCF960AD2549CCA300F3EAB0 /* AreaViewData.swift */,
 			);
 			path = AreaList;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8D5A7C25442FAC0095E61C /* GAreaLargeSearchAPIGateway.swift in Sources */,
+				FCF960AE2549CCA300F3EAB0 /* AreaViewData.swift in Sources */,
 				FC8D5A7B25442FAC0095E61C /* AreaListUseCase.swift in Sources */,
 				FC88CFD22545D9440055529E /* LottieView.swift in Sources */,
 				FC8D5AD1254432B00095E61C /* AreaListBuilder.swift in Sources */,

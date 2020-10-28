@@ -8,17 +8,16 @@
 import Foundation
 import Combine
 
-struct AreaViewData: Identifiable {
-    var id = ""
-    var name = ""
+protocol AreaListViewModelProtocol: ObservableObject {
+    var viewData: [AreaViewData] { get set }
+    var errorMessage: String? { get }
+    var isLoading: Bool { get set }
 
-    init(gAreaLarge: GareaLarge) {
-        self.id = gAreaLarge.areacodeL
-        self.name = gAreaLarge.areanameL
-    }
+    var onAppear: () -> Void { get }
+    var onDisappear: () -> Void { get }
 }
 
-final class AreaListViewModel: ObservableObject {
+final class AreaListViewModel: AreaListViewModelProtocol, ObservableObject {
 
     private var cancellables: [AnyCancellable] = []
     
