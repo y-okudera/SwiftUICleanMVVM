@@ -12,6 +12,7 @@ protocol AreaListViewModelProtocol: ObservableObject {
     var viewData: [AreaViewData] { get set }
     var errorMessage: String? { get set }
     var isLoading: Bool { get set }
+    var selectedArea: AreaViewData? { get set }
 
     var onAppear: () -> Void { get }
     var onDisappear: () -> Void { get }
@@ -29,6 +30,9 @@ final class AreaListViewModel: AreaListViewModelProtocol, ObservableObject {
 
     @Published
     var isLoading = false
+
+    @Published
+    var selectedArea: AreaViewData?
     
     var useCase: AreaListUseCase!
     
@@ -38,7 +42,20 @@ final class AreaListViewModel: AreaListViewModelProtocol, ObservableObject {
     
     private(set) lazy var onAppear: () -> Void = { [weak self] in
         guard let self = self else { return }
+        self.getAreaList()
+    }
+    
+    private(set) lazy var onDisappear: () -> Void = { [weak self] in
+        guard let self = self else { return }
+        self.cancellables.forEach { $0.cancel() }
+        self.cancellables = []
+    }
+}
 
+extension AreaListViewModel {
+
+    /// エリア一覧を取得する
+    private func getAreaList() {
         self.isLoading = true
 
         self.useCase.getAreaList()
@@ -51,16 +68,10 @@ final class AreaListViewModel: AreaListViewModelProtocol, ObservableObject {
                     self?.errorMessage = apiError.errorDescription
                 }
                 self?.isLoading = false
-                
+
             } receiveValue: { [weak self] response in
                 self?.viewData = response.gareaLarge.map { AreaViewData(gAreaLarge: $0) }
             }
             .store(in: &self.cancellables)
-    }
-    
-    private(set) lazy var onDisappear: () -> Void = { [weak self] in
-        guard let self = self else { return }
-        self.cancellables.forEach { $0.cancel() }
-        self.cancellables = []
     }
 }

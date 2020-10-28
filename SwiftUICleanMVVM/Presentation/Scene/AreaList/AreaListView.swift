@@ -15,16 +15,36 @@ struct AreaListView<ViewModel: AreaListViewModelProtocol>: View {
     var body: some View {
         NavigationView {
             ZStack {
-                List($viewModel.viewData.wrappedValue) { area in Text(area.name) }
-                    .onAppear(perform: viewModel.onAppear)
-                    .onDisappear(perform: viewModel.onDisappear)
-                    .navigationBarTitle("エリア一覧")
+                List($viewModel.viewData.wrappedValue) { area in
+                    Button(
+                        action: { viewModel.selectedArea = area },
+                        label: { Text(area.name) }
+                    )
                     .alert(
-                        isPresented: Binding<Bool>(get: { viewModel.errorMessage != nil }, set: { _ in viewModel.errorMessage = nil } ),
-                        content: {
-                            Alert(title: Text("エラー"), message: Text(viewModel.errorMessage ?? ""))
+                        isPresented: Binding<Bool>(
+                            get: { viewModel.selectedArea != nil },
+                            set: { _ in viewModel.selectedArea = nil }
+                        ), content: {
+                            Alert(title: Text("エリア名"), message: Text(viewModel.selectedArea?.name ?? ""))
                         }
                     )
+                }
+                .onAppear(perform: viewModel.onAppear)
+                .onDisappear(perform: viewModel.onDisappear)
+                .navigationBarTitle("エリア一覧")
+                .alert(
+                    isPresented: Binding<Bool>(
+                        get: { viewModel.errorMessage != nil },
+                        set: { _ in viewModel.errorMessage = nil }
+                    ), content: {
+                        Alert(
+                            title: Text("エラー"),
+                            message: Text(viewModel.errorMessage ?? ""),
+                            primaryButton: Alert.Button.default(Text("リトライ"), action: viewModel.onAppear),
+                            secondaryButton: Alert.Button.cancel(Text("キャンセル"))
+                        )
+                    }
+                )
                 LottieView(lottieViewType: .loading)
                     .frame(width: 80, height: 80)
                     .hidden(!$viewModel.isLoading.wrappedValue)
